@@ -14,10 +14,10 @@ Next, write a function called countChar that behaves like countBs, except it tak
 
 (function(){
 
-	var countBs = function (str) {
+	var countBs = function(str) {
 	  var numOfB = 0;
 	  
-	  for ( i = 0; i < str.length - 1; i++) {
+	  for ( i = 0; i < str.length; i++) {
 	  	if (str.charAt(i) === "B") {
 	  		numOfB += 1;
 	  	}
@@ -26,8 +26,18 @@ Next, write a function called countChar that behaves like countBs, except it tak
 	  return numOfB;
 	}
 
-	console.log(countBs("BBC"));
+	var countChar = function(strg, target) {
+	  var hits = 0;
+	  for ( i = 0; i < strg.length; i++) {
+	  	if (strg.charAt(i) === target) {
+	  		hits += 1;
+	  	}
+	  }
+      
+      return hits;
+	}
 
-	// console.log(countChar("kakkerlak", "k"));
+	console.log("Bs = " + countBs("BBC"));
+	console.log("countChar = " + countChar("kakkerlak", "k"));
 
 }());
