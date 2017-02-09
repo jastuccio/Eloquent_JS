@@ -13,13 +13,33 @@ As a bonus assignment, modify your range function to take an optional third argu
 
 (function() {
 
-    var range = function(start, end) {
-        var arr = [];
-        for (i = start; i < end + 1; i++) {
+    var range = function(start, end, step) {
+  	  //Don't use || to set default values in JavaScript
+  	  //codereadability.com/javascript-default-parameters-with-or-operator/
+    	   var arr = [];
+
+    	   // for incremental arrays
+    	   if (start < end) {
+    	  	
+    	  	if (step === undefined) {											
+            step = 1;
+          }
+         
+          for (i = start; i <= end; i += step) {
             arr.push(i);
+          }
+       
+        // for decremental arrays
+        } else {
+        	if (step === undefined) {											
+            step = -1;
+          }
+          for (i = start; i >= end; i += step ) {
+            arr.push(i);
+          }
         }
-        return arr;
-    }
+      return arr;
+    };
 
 	  var sum = function (arr) {
 		  var total = arr.reduce(function (prev, curr) {
@@ -27,9 +47,11 @@ As a bonus assignment, modify your range function to take an optional third argu
 			});
 
 			return total;
-		}
+		};
 
     console.log(range(1, 10));
     console.log("sum = " + sum(range(1, 10)));
+    console.log("expected '1, 3, 5, 7, 9' result: " + range(1, 10, 2));
+    console.log("expected '5, 4, 3, 2' result: " + range(5, 2, -1));
 
 }());
