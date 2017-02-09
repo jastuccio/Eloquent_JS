@@ -2,14 +2,8 @@
 
 (function(){
 
-	var result;
-	var min = function (a, b) {
-		var result = a;
-
-		if (a > b ) {
-			result = b;
-		}
-		console.log(result);
+  function min(a, b) {
+    return (a < b) ? a : b;
 	}
 
 	min( 27,10);
