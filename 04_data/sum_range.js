@@ -16,21 +16,15 @@ As a bonus assignment, modify your range function to take an optional third argu
 		//Don't use || to set default values in JavaScript
 		//codereadability.com/javascript-default-parameters-with-or-operator/
 		var arr = [];
-		// console.log("step === undefined?" + step  );	
-
 		if (!step) {
 			step = start < end ? 1 : -1;
 		}
-
-		// for incremental arrays
-		if (start < end) {
-
+	
+		if (start < end) {			// for incremental arrays
 			for (i = start; i <= end; i += step) {
 				arr.push(i);
 			}
-
-			// for decremental arrays
-		} else {
+		} else {				// for decremental arrays
 			for (i = start; i >= end; i += step) {
 				arr.push(i);
 			}
@@ -50,5 +44,6 @@ As a bonus assignment, modify your range function to take an optional third argu
 	console.log("sum; expected 55 \nresult is: " + sum(range(1, 10)));
 	console.log("positive range by 2s; expected '1, 3, 5, 7, 9'\nresult: " + range(1, 10, 2));
 	console.log("negative range; expected '5, 4, 3, 2'\nresult: " + range(5, 2, -1));
+	console.log("negative range by 10s; expected '70, 60, 50, 40'\nresult: " + range(70, 40, -10));
 
   }());
