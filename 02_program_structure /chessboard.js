@@ -26,8 +26,9 @@ for (i = 0; i < boardSize; i++) {
   	row += ' ';
   	row += '#';
   }
+  row + "\n";
 
-  console.log(row + "\n");
+  console.log(row);
   row = "";
   // console.log("i = " + i);
 
