@@ -3,10 +3,8 @@
 
 (function(){
 
-	var triangle = '';
-	for (i = 0; triangle.length < 7; i++) {
-		triangle += '#';
-		console.log(triangle);
+	for (var line = "#"; line.length < 8; line += "#") {
+		console.log(line);
 	}
 
 }());
