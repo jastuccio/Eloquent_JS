@@ -33,6 +33,14 @@ If you haven’t already, also write a recursive version of nth.
     return list;
   }
 
+  function listToArray(list) {
+    var arr = [];
+    for (var node = list; node; node = node.rest) {
+      array.push(node.value);
+    }
+    return array;
+  }
+
 console.log(arrayToList([10, 20]));
 // → {value: 10, rest: {value: 20, rest: null}}
 // console.log(listToArray(arrayToList([10, 20, 30])));
